@@ -43,3 +43,10 @@ exports.update = (req, res) => {
     .then(result => res.send(result))
     .catch(err => res.status(500).send(err));
 };
+
+exports.getOne = (req, res) => {
+  post
+    .find({ _id: req.params.id })
+    .then(result => res.send(result))
+    .catch(err => res.status(500).send(err));
+};
