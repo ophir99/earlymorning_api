@@ -14,7 +14,11 @@ exports.new = (req, res) => {
 exports.getAll = (req, res) => {
   post
     .find()
-    .then(result => res.send(result))
+    .then(result => {
+      setTimeout(() => {
+        res.send(result);
+      }, 5000);
+    })
     .catch(err => res.status(500).send(err));
 };
 
